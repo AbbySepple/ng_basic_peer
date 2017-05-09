@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>peer project angular</title>
+  <script src="../vendors/angular.min.js" charset="utf-8"></script>
+  <script src="../scripts/ngBasic.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="../vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body ng-app='myApp'>
+  <h1>Places Journal</h1>
+  <div ng-controller='InventoryController as ic'>
+    <input type="text" placeholder="name" ng-model="ic.placeIn" />
+    <input type="text" placeholder="description" ng-model="ic.memoryIn" />
+    <button ng-click="ic.addItem()">Add Item</button>
+    <div class="container row">
+      <div ng-repeat="thing in ic.items" class="col-sm-3">
+        <h3>{{thing.place}}</h3>
+        <p>
+          {{thing.memory}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div ng-controller="PlacesJournalController as pjc">
+    {{pjc.journalData.}}
+  </div>
+</body> -->
+</html>
